@@ -25,6 +25,10 @@ a {
   text-decoration: none;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 ul,
 li {
   list-style: none;
@@ -241,7 +245,7 @@ li {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-top: 100px;
+  margin-top: 60px;
 }
 
 .my-abilities {
@@ -298,6 +302,7 @@ li {
 
 .my-img img {
   max-width: 100%;
+  min-height: 100%;
 }
 
 .work {
@@ -387,10 +392,10 @@ li {
 }
 
 .finished__project {
-  width: 480px;
-  height: 480px;
+  width: 25%;
   position: relative;
   text-align: center;
+  overflow: hidden;
 }
 
 .finished__project:hover .finished__project-hover {
@@ -401,6 +406,7 @@ li {
 }
 
 .finished__project img {
+  min-height: 100%;
   max-width: 100%;
 }
 
@@ -409,7 +415,7 @@ li {
   left: 0;
   top: 0;
   width: 0%;
-  height: 100%;
+  min-height: 100%;
   background: #34547A;
   opacity: 0.6;
   -webkit-transition: all .2s;
@@ -433,6 +439,8 @@ li {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .client + .client {
@@ -487,6 +495,7 @@ li {
 }
 
 .to__order-form input::-webkit-input-placeholder {
+  border: none;
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
@@ -495,6 +504,7 @@ li {
 }
 
 .to__order-form input::-moz-placeholder {
+  border: none;
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
@@ -503,6 +513,7 @@ li {
 }
 
 .to__order-form input:-ms-input-placeholder {
+  border: none;
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
@@ -511,23 +522,19 @@ li {
 }
 
 .to__order-form input::-ms-input-placeholder {
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 23px;
-  color: #5F5D5D;
-}
-
-.to__order-form input::placeholder {
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 23px;
-  color: #5F5D5D;
-}
-
-.to__order-form input {
   border: none;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 23px;
+  color: #5F5D5D;
+}
+
+.to__order-form input,
+.to__order-form input::placeholder {
+  border: none;
+  font-style: normal;
+  font-weight: normal;
   font-size: 14px;
   line-height: 23px;
   color: #5F5D5D;
@@ -570,6 +577,7 @@ li {
   color: #FFFFFF;
   background: #34547A;
   border: none;
+  cursor: pointer;
 }
 
 .footer {
@@ -606,6 +614,251 @@ li {
   line-height: 21px;
   color: #FFFFFF;
 }
+
+@media (min-width: 1920px) {
+  .finished__project {
+    width: 480px;
+    height: 480px;
+  }
+}
+
+@media (max-width: 1440px) {
+  .container {
+    padding: 0 10px;
+  }
+
+  .header__top {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+
+  .finished__project-hover i {
+    -webkit-transform: translate(0, -50%);
+        -ms-transform: translate(0, -50%);
+            transform: translate(0, -50%);
+  }
+}
+
+@media (max-width: 1440px) and (max-width: 767px), (max-width: 828px) {
+  .finished__project {
+    width: 25%;
+    height: 300px;
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 1024px) {
+  .about-project__item + .about-project__item {
+    margin-left: 30px;
+  }
+
+  .project__info-num {
+    font-size: 18px;
+  }
+
+  .about__me-skills {
+    padding: 0 20px;
+  }
+
+  .play-btn {
+    -webkit-transform: translate(-50%, -100%);
+        -ms-transform: translate(-50%, -100%);
+            transform: translate(-50%, -100%);
+  }
+
+  .fa-play {
+    font-size: 35px;
+  }
+}
+
+@media (max-width: 1024px) and (max-width: 991px), (max-width: 1400px) {
+  .work__inner-video {
+    width: 100%;
+  }
+}
+
+@media (max-width: 991px) {
+  .about-project__item + .about-project__item {
+    margin-left: 40px;
+  }
+
+  .project__item-img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .about__me-skills {
+    padding: 0 10px;
+  }
+
+  .my-abilities {
+    margin-right: 50px;
+  }
+
+  .work {
+    padding: 50px 0;
+  }
+
+  .work-video__img {
+    min-height: 100%;
+  }
+
+  .client + .client {
+    margin-left: 20px;
+  }
+}
+
+@media (max-width: 828px) {
+  .header-info__title {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 767px) {
+  .header {
+    padding-top: 30px;
+  }
+
+  .header__top {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+
+  .header__top-list {
+    width: 100%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-top: 30px;
+  }
+
+  .header-info__title {
+    font-size: 34px;
+  }
+
+  .header-info__text {
+    margin-top: 30px;
+  }
+
+  .header-info__link {
+    padding: 10px 20px;
+    font-size: 15px;
+    margin-top: 30px;
+  }
+
+  .about__me-text {
+    margin-bottom: 0;
+    border-bottom: 1px solid #c0c0c0;
+    padding-bottom: 30px;
+  }
+
+  .about-project__item + .about-project__item {
+    margin-left: 20px;
+  }
+
+  .finished__projects {
+    margin-top: 0;
+    padding-bottom: 40px;
+  }
+
+  .finished__project-hover i {
+    -webkit-transform: translate(0, 50%);
+        -ms-transform: translate(0, 50%);
+            transform: translate(0, 50%);
+  }
+}
+
+@media (max-width: 767px) and (max-width: 1024px) {
+  .header__bottom-img {
+    margin-right: 40px;
+  }
+}
+
+@media (max-width: 767px) and (max-width: 828px) {
+  .about__me-projects {
+    display: none;
+  }
+}
 @supports (-webkit-appearance:none){
+
+}
+
+ @media (min-width: 1920px){
+
+@supports (-webkit-appearance:none){
+
+}
+
+}
+
+ @media (max-width: 1440px){
+
+@supports (-webkit-appearance:none){
+
+}
+
+}
+
+ @media (max-width: 1440px) and (max-width: 767px), (max-width: 828px){
+
+@supports (-webkit-appearance:none){
+
+}
+
+}
+
+ @media (max-width: 1024px){
+
+@supports (-webkit-appearance:none){
+
+}
+
+}
+
+ @media (max-width: 1024px) and (max-width: 991px), (max-width: 1400px){
+
+@supports (-webkit-appearance:none){
+
+}
+
+}
+
+ @media (max-width: 991px){
+
+@supports (-webkit-appearance:none){
+
+}
+
+}
+
+ @media (max-width: 828px){
+
+@supports (-webkit-appearance:none){
+
+}
+
+}
+
+ @media (max-width: 767px){
+
+@supports (-webkit-appearance:none){
+
+}
+
+}
+
+ @media (max-width: 767px) and (max-width: 1024px){
+
+@supports (-webkit-appearance:none){
+
+}
+
+}
+
+ @media (max-width: 767px) and (max-width: 828px){
+
+@supports (-webkit-appearance:none){
+
+}
 
 }
